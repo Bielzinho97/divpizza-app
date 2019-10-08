@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Finalizar compra {{nomePizza}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Formas de pagamento</ion-label>
+    <ion-select value="brown" okText="Confirmar" cancelText="Voltar">
+      <ion-select-option value="credito">Cartão de Crédito</ion-select-option>
+      <ion-select-option value="debito">Cartão de Débito</ion-select-option>
+      <ion-select-option value="dinheiro">Dinheiro</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+      <ion-label position='floating'>Endereço</ion-label>
+      <ion-input name='Endereco'></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label position='floating'>Digite seu CEP</ion-label>
+      <ion-input [(ngModel)]='cep'></ion-input>
+  </ion-item>
+  <ion-button color="secondary" class=" ion-float-right" (click)="buscarEndereco()">
+      <ion-icon name="search"></ion-icon>Buscar endereço
+  </ion-button>
+
+  <br/>
+  <br/>
+  <br/>
+  <ion-item>
+      <ion-label position='floating'>Rua</ion-label>
+      <ion-input name='Rua' readonly="readonly"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label position='floating'>Bairro</ion-label>
+      <ion-input name='Bairro' readonly="readonly"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label position='floating'>Cidade</ion-label>
+      <ion-input name='Cidade' readonly="readonly"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label position='floating'>Estado</ion-label>
+      <ion-input name='Estado' readonly="readonly"></ion-input>
+  </ion-item>
+
+  <ion-row>
+    <ion-col size="6">
+      <ion-item>
+        <ion-label position='floating'>Número</ion-label>
+        <ion-input name='Numero' ngModel></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-item>
+        <ion-label position='floating'>Complemento</ion-label>
+        <ion-input name='Complemento' ngModel></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-button color="secondary" expand="block">
+    Finalizar<ion-icon name="arrow-dropright-circle"></ion-icon>
+  </ion-button>
+    
+
+</ion-content>
